@@ -1,8 +1,2 @@
 #!/bin/bash
-echo "cat dog bird fish cat" > words.txt
-
-while read -r word; do
-    if [[ $(uniq -c "$word") -eq 1 ]]; then
-        echo "$word"
-    fi
-done < <(cat words.txt)
+sort inputfile | uniq -u
